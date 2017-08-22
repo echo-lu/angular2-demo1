@@ -1,0 +1,17 @@
+<h2>Personal Contact</h2>
+<form id="filter">
+	<label>Filter Name</label>
+	<input type="text" [(ngModel)]="term" name="first" placeholder="请输入要搜索的关键词"/>
+</form>
+<ul id="person-listing">
+	<li *ngFor="let person of people | filter:term">
+		<div class="single-person">
+			<span [ngStyle]="{'background-color':person.color}">{{person.color}}</span>
+			<h3>{{person.name | uppercase}}</h3>
+			<h3>{{person.phone}}</h3>
+		</div>
+	</li>
+</ul>
+
+<button type="button" (click)="logIt()">Log Me</button>
+  
